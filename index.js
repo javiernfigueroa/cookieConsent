@@ -3,6 +3,8 @@ const CLOSE_BTN = document.getElementById("modal-close-btn");
 const FORM = document.getElementById("info-form");
 const MODAL_P = document.getElementById("modal-text");
 const MODAL_INNER = document.getElementById("modal-inner");
+const DECLINE_BTN = document.getElementById("declain-btn")
+const BTN_CONTAINER = document.getElementById("btn-container")
 
 setTimeout(function () {
   MODAL.style.display = "inline";
@@ -11,6 +13,10 @@ setTimeout(function () {
 CLOSE_BTN.addEventListener("click", function () {
   MODAL.style.display = "none";
 });
+
+DECLINE_BTN.addEventListener("mouseover", function reverse() {
+  BTN_CONTAINER.classList.toggle('reverse')
+})
 
 FORM.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -39,6 +45,7 @@ FORM.addEventListener("submit", function (event) {
     <div class="idiot-gif">
         <img src="img/pirate.gif">
     </div>
-    `;
+    `
+    CLOSE_BTN.disabled = false;
   }, 4500);
 });
